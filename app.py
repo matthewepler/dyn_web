@@ -4,6 +4,7 @@ from flask import Flask, request
 from flask import render_template
 
 app = Flask(__name__)
+
 @app.route("/")
 def mainpage():
 
@@ -17,9 +18,9 @@ def mainpage():
     return render_template('index.html', **featured)
 
 
-@app.route("/share")
+@app.route("/share.html")
 def share():
-    return redirect('share.html')
+    return render_template('share.html')
 
 # start the webserver
 if __name__ == "__main__":

@@ -25,6 +25,23 @@ h3 {
 	font-size: 24px;
 }
 
+label {
+	color:336666;
+	font-family:ABeeZee;
+	font-size: 24px;
+}
+
+#title_label {
+	font-size:32px;
+} 
+
+legend {
+	color:336666;
+	font-family:ABeeZee;
+	font-size: 24px;
+}
+
+
 .thumbnails li {
   background:white;
 }
@@ -32,4 +49,10 @@ h3 {
 .thumbnails .span1 {
   background:none;
 }
+
+.page-header {
+	margin-left:7.5%;
+}
+
+
 

@@ -3,8 +3,105 @@
 	<title>B&B | Share</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1>Share</h1>
+
+	<!--TITLE-->
+	<div class="page-header">	
+		<h2>Share a Sandwich</h2>  
+    </div>
+
+	<!--PHOTO FRAME-->
+	<div class="span1"></div>
+	<div class="span4 thumbnail">
+		<img src="/static/img/photo_placeholder.png"/>
+	</div>
+
+	<!--MAIN INFO-->
+	<div class="span6">
+		<form method="POST" action="">
+			<label for="title" id="title_label">Name your creation:</label>
+			<input type="text" id="title" name="title" autofocus="autofocus" size="70">
+
+			<label for="name">Your Name</label>
+			<input type="text" id="name" name="name" size="60">
+					
+			<label for="nickname">Nickname</label>
+			<input type="text" id="nickname" name="nickname" size="60">
+			</br>
+
+			<label for="description">Description</label>
+			<textarea cols="100" rows="8" id="description" name="description"></textarea>
+
+			<!--BREAD-->
+			<fieldset><legend>Bread</legend>
+				<select name="bread">
+					<option value="bread_brand">Bread brand...</option>
+					<option value="naturesown">Nature's Own</option>
+					<option value="orowheat">Orowheat</option>
+					<option value="pepperidgefarm">Pepperidge Farm</option>
+					<option value="sunbeam">Sunbeam</option>
+					<option value="saralees">Sara Lee's</option>
+					<option value="wonder">Wonder</option>
+				</select>
+
+				<select name="bread_type">
+					<option value="bread_type">Bread type...</option>
+					<option value="wonder">7 Grain</option>
+					<option value="wonder">Pumpernickel</option>
+					<option value="wonder">Rye</option>
+					<option value="wonder">Sourdough</option>
+					<option value="wonder">Wheat</option>
+					<option value="white">White</option>
+				</select>
+			</fieldset>
+
+			<!--BUTTER-->
+			<fieldset><legend>Butter</legend>
+				<select name="butter_brand">
+					<option value="butter_brand">Butter brand...</option>
+					<option value="earthbalance">Earth Balance</option>
+					<option value="jif">JIF</option>
+					<option value="laurascudders">Laura Scudder's</option>
+					<option value="peanutbutterandco">Peanut Butte & Co.</option>
+					<option value="peterpan">Peter Pan</option>
+					<option value="skippy">Skippy</option>
+					<option value="smuckers">Smuckers</option>
+				</select>
+
+				<select name="butter_type">
+					<option value="butter_type">Butter type...</option>
+					<option value="almond">Almond</option>
+					<option value="cashew">Cashew</option>
+					<option value="peanut">Peanut</option>
+				</select>
+
+				<select name="butter_style">
+					<option value="butter_style">Butter style...</option>
+					<option value="creamy">Creamy</option>
+					<option value="crunchy">Crunchy</option>
+				</select>
+			</fieldset>
+
+			<!--OTHER INGREDIENTS-->
+			<fieldset><legend>Other Ingredients</legend>
+				<input type="text" id="qty1" name="quantity" value="qty"><span>
+				<input type="text" id="ingr1" name="ingredient" value="ingredient">
+			</span>
+			</fieldset>
+
+			<!--INSTRUCTIONS-->
+			<label for="description">Instructions</label>
+			<textarea cols="100" rows="8" id="instructions" name="instructions"></textarea>
+					
+			<!--SUBMIT BUTTON-->
+			<label>
+				<button type="submit" class="btn btn-large btn-success">Share</button>
+			</label>
+		</form>
+	</div>
+
 </body>
 </html>

@@ -700,7 +700,7 @@ h4 small {
 .page-header {
   padding-bottom: 9px;
   margin: 20px 0 30px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #339966;
 }
 
 ul,
@@ -918,7 +918,7 @@ legend {
   line-height: 40px;
   color: #333333;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #339966;
 }
 
 legend small {
@@ -966,10 +966,10 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 20px;
+  height: 30px;
   padding: 4px 6px;
   margin-bottom: 9px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 20px;
   color: #555555;
   -webkit-border-radius: 3px;
@@ -980,7 +980,7 @@ input[type="color"],
 input,
 textarea,
 .uneditable-input {
-  width: 206px;
+  width:auto;
 }
 
 textarea {
