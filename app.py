@@ -4,20 +4,22 @@ from flask import Flask, request
 from flask import render_template
 
 app = Flask(__name__)
-
-@app.route('/')
+@app.route("/")
 def mainpage():
 
     featured = {
         'pic' : '/static/img/featured.png',
-        'name' : 'The Tasty Tower',
-        'descrip' : 'A double-decker grilled veggie and proscuitto taste explosion on toasted home-made sourdough.',
+        'name' : 'Electric Elvis',
+        'descrip' : 'Almond butter, bananas, and guava paste slices on toasted home-made wheat bread. "An Elvis man should love it."',
         'author' : 'Matthew Epler'
     }
 
-
     return render_template('index.html', **featured)
 
+
+@app.route("/share")
+def share():
+    return redirect('share.html')
 
 # start the webserver
 if __name__ == "__main__":

@@ -1,8 +1,11 @@
 <html>
 	<head>
-	    <title>B&B-Home</title>
+	    <title>B&B | Home</title>
 	    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+
 
     </head>
     <body>      
@@ -40,7 +43,8 @@
 
     	<!--PAGE HEADER-->
 		<div class="page-header" align="center">
-        	<a><img src="/static/img/mast.png"></a>
+        	<!-- <a><img src="/static/img/mast.png"></a> -->
+            <h1>Breads & Butters</h1>
         	<h3>Find and share your favorite sandwich creations! Yum.</h3>
         	<a class="btn btn-primary btn-large" href="/share.html">
          	Share a recipe
@@ -58,7 +62,7 @@
         			</div>
         		</li>
         		<li class="span6">
-        			<h1>{{ name }}</h1>
+        			<h2>{{ name }}</h2>
         			<h3> by {{ author }} </h3>
         			<p>{{ descrip }}</p>
         		</li>
@@ -75,7 +79,7 @@
         			<li class="span1"></li>
         			<li class="span2">
         				<div class="thumbnail">
-        					<img src="http://placehold.it/300x300">
+        					<img src="http://placehold.it/200x200">
         					<div class="caption">
         						<h3>Sandwich Name</h3>
         						<p>
@@ -90,7 +94,7 @@
         			</li>
         			<li class="span2">
         				<div class="thumbnail">
-        					<img src="http://placehold.it/300x300">
+        					<img src="http://placehold.it/200x200">
         					<div class="caption">
         						<h3>Sandwich Name</h3>
         						<p>
@@ -105,7 +109,7 @@
         			</li>
         			<li class="span2">
         				<div class="thumbnail">
-        					<img src="http://placehold.it/300x300">
+        					<img src="http://placehold.it/200x200">
         					<div class="caption">
         						<h3>Sandwich Name</h3>
         						<p>
@@ -120,7 +124,7 @@
         			</li>
         			<li class="span2">
         				<div class="thumbnail">
-        					<img src="http://placehold.it/300x300">
+        					<img src="http://placehold.it/200x200">
         					<div class="caption">
         						<h3>Sandwich Name</h3>
         						<p>
@@ -135,7 +139,7 @@
         			</li>
         			<li class="span2">
         				<div class="thumbnail">
-        					<img src="http://placehold.it/300x300">
+        					<img src="http://placehold.it/200x200">
         					<div class="caption">
         						<h3>Sandwich Name</h3>
         						<p>

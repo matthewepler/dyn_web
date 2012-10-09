@@ -1,0 +1,35 @@
+body {
+  background-image:url('/static/img/tile.png');
+ }
+
+p {
+
+}
+
+h1 {
+	color:#339966;
+	padding-top:5%;
+	font-family:Satisfy;
+	font-size:72px;
+}
+
+h2 {
+	color:#339966;
+	font-family: ABeeZee;
+    font-size: 38px;
+}
+
+h3 {
+	font-family: ABeeZee;
+	color:#336666;
+	font-size: 24px;
+}
+
+.thumbnails li {
+  background:white;
+}
+
+.thumbnails .span1 {
+  background:none;
+}
+
