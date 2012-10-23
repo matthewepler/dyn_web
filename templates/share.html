@@ -5,11 +5,120 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 	<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+    <script src="/static/js/jquery.js"></script>
+	<script>
+		$(document).ready(function() {
+			$bread_select = $("select[name='bread_brand']");
+			$bread_result = $("select[name='bread_type']");
+
+			$bread_select.change(function() {
+
+			if ($(this).val() == "Nature's Own") {
+				$("select[name='bread_type'] option").remove();
+				$("<option>Butterbread</option>").appendTo($bread_result);
+				$("<option>Whole Wheat</option>").appendTo($bread_result);
+				$("<option>Hone Wheat</option>").appendTo($bread_result);
+				$("<option>Honey 7 Grain</option>").appendTo($bread_result);
+			}
+
+			if ($(this).val() == "Orowheat") 
+			{
+				$("select[name='bread_type'] option").remove();
+				$("<option>Potato</option>").appendTo($bread_result);
+				$("<option>Dutch Country</option>").appendTo($bread_result);
+				$("<option>Health Nut</option>").appendTo($bread_result);
+				$("<option>Oat Nut</option>").appendTo($bread_result);
+			}
+
+			if ($(this).val() == "Pepperidge Farms") 
+			{
+				$("select[name='bread_type'] option").remove();
+				$("<option>Ancient Grains</option>").appendTo($bread_result);
+				$("<option>White Sandwich</option>").appendTo($bread_result);
+				$("<option>Sourdough</option>").appendTo($bread_result);
+				$("<option>Honey Wheat</option>").appendTo($bread_result);
+			}
+
+			if ($(this).val() == "Wonder") 
+			{
+				$("select[name='bread_type'] option").remove();
+				$("<option>Buttermilk</option>").appendTo($bread_result);
+				$("<option>Texas Toast</option>").appendTo($bread_result);
+				$("<option>Honey Wheat</option>").appendTo($bread_result);
+			}
+
+			});
+
+			$butter_select = $("select[name='butter_brand']");
+			$butter_result = $("select[name='butter_type']");
+
+			$butter_select.change(function() {
+
+			if ($(this).val() == "Barney") {
+				$("select[name='butter_type'] option").remove();
+				$("<option>Almond - creamy</option>").appendTo($butter_result);
+				$("<option>Almond - crunchy</option>").appendTo($butter_result);
+				$("<option>Peanut - creamy</option>").appendTo($butter_result);
+				$("<option>Peanut - crunchy</option>").appendTo($butter_result);
+			}
+
+			if ($(this).val() == "Woodstock Farms") 
+			{
+				$("select[name='butter_type'] option").remove();
+				$("<option>Cashew - creamy</option>").appendTo($butter_result);
+				$("<option>Cashew - crunchy</option>").appendTo($butter_result);
+			}
+
+			if ($(this).val() == "Jif") 
+			{
+				$("select[name='butter_type'] option").remove();
+				$("<option>Regular - creamy</option>").appendTo($butter_result);
+				$("<option>Regular - crunchy</option>").appendTo($butter_result);
+				$("<option>Reduced Fat - creamy</option>").appendTo($butter_result);
+				$("<option>Reduced Fat - crunchy</option>").appendTo($butter_result);
+			}
+
+			if ($(this).val() == "Skippy") 
+			{
+				$("select[name='butter_type'] option").remove();
+				$("<option>Regular - creamy</option>").appendTo($butter_result);
+				$("<option>Regular - crunchy</option>").appendTo($butter_result);
+				$("<option>Honey Nut - creamy</option>").appendTo($butter_result);
+			}
+
+			});
+		});
+		
+</script>
 </head>
 <body>
 
+	<!--NAVIGATION BAR-->
+        <div class="navbar navbar-fixed-top">
+    		<div class="navbar-inner">
+    			<div class="container-fluid">
+    				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    				</a>
+    				<a class="brand" href="#">B&B</a>
+    				<div class="nav-collapse collapse">
+    					<p class="navbar-text pull-right">
+    						<a href="#" class="navbar-link">Username</a>
+    					</p>
+    					<ul class="nav">
+    						<li>
+    							<a href="#about">Info</a>
+    						</li>
+    					</ul>
+    				</div> <!--nav-collapse-->	
+    			</div> <!--container-->
+    		</div> <!--navbar-inner-->
+    	</div> <!--navbar navbar-fixed-top-->
+
 	<!--TITLE-->
-	<div class="page-header">	
+	<div class="well well-large" id="share-well">	
 		<h2>Share a Sandwich</h2>  
     </div>
 
@@ -21,74 +130,57 @@
 
 	<!--MAIN INFO-->
 	<div class="span6">
-		<form method="POST" action="">
+		<form method="POST" action="/save">
 			<label for="title" id="title_label">Name your creation:</label>
 			<input type="text" id="title" name="title" autofocus="autofocus" size="70">
 
-			<label for="name">Your Name</label>
-			<input type="text" id="name" name="name" size="60">
+			<label for="author">Your Name</label>
+			<input type="text" id="author" name="name" size="60">
 					
-			<label for="nickname">Nickname</label>
+<!-- 			<label for="nickname">Nickname</label>
 			<input type="text" id="nickname" name="nickname" size="60">
-			</br>
+			</br> -->
 
-			<label for="description">Description</label>
-			<textarea cols="100" rows="8" id="description" name="description"></textarea>
+			<label for="descrip">Description</label>
+			<textarea cols="72" rows="8" id="descrip" name="descrip"></textarea>
 
 			<!--BREAD-->
 			<fieldset><legend>Bread</legend>
-				<select name="bread">
-					<option value="bread_brand">Bread brand...</option>
-					<option value="naturesown">Nature's Own</option>
-					<option value="orowheat">Orowheat</option>
-					<option value="pepperidgefarm">Pepperidge Farm</option>
-					<option value="sunbeam">Sunbeam</option>
-					<option value="saralees">Sara Lee's</option>
-					<option value="wonder">Wonder</option>
-				</select>
 
+				<select name="bread_brand" value="Brand">
+					<option>brand...</option>
+					{% for key, value in Breads.iteritems() %}
+						<option>{{ key }}</option>
+					{% endfor %}
+				</select>
 				<select name="bread_type">
-					<option value="bread_type">Bread type...</option>
-					<option value="wonder">7 Grain</option>
-					<option value="wonder">Pumpernickel</option>
-					<option value="wonder">Rye</option>
-					<option value="wonder">Sourdough</option>
-					<option value="wonder">Wheat</option>
-					<option value="white">White</option>
+					<option>type...</option>
 				</select>
 			</fieldset>
 
 			<!--BUTTER-->
 			<fieldset><legend>Butter</legend>
+
 				<select name="butter_brand">
-					<option value="butter_brand">Butter brand...</option>
-					<option value="earthbalance">Earth Balance</option>
-					<option value="jif">JIF</option>
-					<option value="laurascudders">Laura Scudder's</option>
-					<option value="peanutbutterandco">Peanut Butte & Co.</option>
-					<option value="peterpan">Peter Pan</option>
-					<option value="skippy">Skippy</option>
-					<option value="smuckers">Smuckers</option>
+					<option>brand...</option>
+					<option>Barney</option>
+					<option>Woodstock Farms</option>
+					<option>Jif</option>
+					<option>Skippy</option>	
 				</select>
 
 				<select name="butter_type">
-					<option value="butter_type">Butter type...</option>
-					<option value="almond">Almond</option>
-					<option value="cashew">Cashew</option>
-					<option value="peanut">Peanut</option>
-				</select>
-
-				<select name="butter_style">
-					<option value="butter_style">Butter style...</option>
-					<option value="creamy">Creamy</option>
-					<option value="crunchy">Crunchy</option>
+					<option>type...</option>
 				</select>
 			</fieldset>
 
 			<!--OTHER INGREDIENTS-->
 			<fieldset><legend>Other Ingredients</legend>
-				<input type="text" id="qty1" name="quantity" value="qty"><span>
-				<input type="text" id="ingr1" name="ingredient" value="ingredient">
+				<input type="text" id="qty1" name="qty1" value="qty" size="5"><span>
+				<input type="text" id="ingred1" name="ingred1" value="ingredient" size="25"></span></br>
+				<input type="text" id="qty2" name="qty2" value="qty" size="5"><span>
+				<input type="text" id="ingred2" name="ingred2" value="ingredient" size="25"></span>
+				<!-- <i class="icon-plus-sign"></i> -->
 			</span>
 			</fieldset>
 
@@ -98,7 +190,7 @@
 					
 			<!--SUBMIT BUTTON-->
 			<label>
-				<button type="submit" class="btn btn-large btn-success">Share</button>
+				<button type="submit" class="btn btn-large btn-success" value="Submit">Share</button>
 			</label>
 		</form>
 	</div>

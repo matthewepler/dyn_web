@@ -11,6 +11,7 @@ h1 {
 	padding-top:5%;
 	font-family:Satisfy;
 	font-size:72px;
+	line-height:70px;
 }
 
 h2 {
@@ -31,15 +32,13 @@ label {
 	font-size: 24px;
 }
 
-#title_label {
-	font-size:32px;
-} 
-
 legend {
 	color:336666;
 	font-family:ABeeZee;
 	font-size: 24px;
 }
+
+/*------------------------ CLASSES ------*/
 
 
 .thumbnails li {
@@ -52,6 +51,18 @@ legend {
 
 .page-header {
 	margin-left:7.5%;
+}
+
+/*------------------------ IDs ------*/
+
+#title_label {
+	font-size:32px;
+} 
+
+#share-well {
+	padding-top:54px;
+	padding-bottom:15px;
+	padding-left: 75px;
 }
 
 

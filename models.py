@@ -4,32 +4,68 @@ from mongoengine import *
 from flask.ext.mongoengine.wtf import model_form
 from datetime import datetime
 
-class Log(Document):
-	text = StringField()
-	timestamp = DateTimeField(default=datetime.now())
 
-class Comment(EmbeddedDocument):
-	name = StringField()
-	comment = StringField()
-	timestamp = DateTimeField(default=datetime.now())
+# PROFILE OBJECT 
 
-class Idea(Document):
+# class Profile(Document):
+# 	name = StringField()
+# 	nickname = StringField()
+# 	pic = URLField()
+# 	fav = EmbeddedDocumentField()
+# 	sandwiches = ListField( EmbeddedDocumentField() )
+# 	reviews = ListField( EmbeddedDocumentField() )
+# 	likes = IntField()
 
-	creator = StringField(max_length=120, required=True, verbose_name="First name", help_text="Please enter your first name")
-	title = StringField(max_length=120, required=True)
-	slug = StringField()
-	idea = StringField(required=True, verbose_name="What is your idea?")
+	  
+# SANDWICH OBJECT 
 
-	# Category is a list of Strings
-	categories = ListField(StringField(max_length=30))
+class Sandwich(EmbeddedDocument):
+	title = StringField()
+	author = StringField()
+	# author_prof = EmbeddedDocumentField()
+	descrip = StringField()
+	bread_brand = StringField()
+	bread_type = StringField()
+	butter_brand = StringField() 
+	butter_type = StringField()
+	qty1 = StringField()
+	ingred1 = StringField()
+	qty2 = StringField()
+	ingred2 = StringField()
+	instructions = StringField()
+	# rating = DecimalField()
+	# likes = IntField()
+	# pic = URLField()	
 
-	# Comments is a list of Document type 'Comments' defined above
-	comments = ListField( EmbeddedDocumentField(Comment) )
+SandwichForm = model_form(Sandwich)	
 
-	# Timestamp will record the date and time idea was created.
-	timestamp = DateTimeField(default=datetime.now())
 
-IdeaForm = model_form(Idea)
+# REVIEW OBJECT 
+# class Review (object):
+# 	# author = EmbeddedDocumentField()
+# 	rating = IntField()
+# 	text = StringField()
 
+
+# BREAD OBJECT  
+# class Bread (Document):
+# 	brand = StringField()
+# 	category = StringField()
+# 	names = ListField( StringField() )
+
+
+# # BUTTER OBJECT
+# class Butter (Document):
+# 	brand = StringField()
+# 	types = ListField( StringField() )
+
+
+# # ADDON OBJECT
+# class Addon (Document):
+# 	name = StringField()
+# 	category = StringField()
+# 	types = ListField( StringField() )
 	
+
+
 
